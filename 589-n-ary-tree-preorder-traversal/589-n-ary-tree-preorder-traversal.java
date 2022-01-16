@@ -19,24 +19,33 @@ class Node {
 
 class Solution {
     public List<Integer> preorder(Node root) {
-         List<Integer> answer=new ArrayList<>();
-        preorderTra(root,answer);
-        return answer;
-    }
-    
-    private void preorderTra(Node root,List<Integer> answer){
+        List<Integer> answer=new ArrayList<>();
+        Stack<Node> st=new Stack<>();
         if(root==null){
-            return;
+            return answer;
         }
-        answer.add(root.val);
-        for(Node children:root.children){
-            preorderTra(children,answer);
+        st.push(root);
+        
+        
+        
+        while(!st.empty()){
+         Node currentNode=st.pop();
+            answer.add(currentNode.val);
+            List<Node> childrens=currentNode.children;
+            int n=childrens.size();
+            
+            for(int i=n-1;i>=0;i--){
+                st.push(childrens.get(i));
+            }
+            
+//             if(currentNode.right!=null){
+//                 st.push(currentNode.right);
+//             }
+//             if(currentNode.left!=null){
+//                 st.push(currentNode.left);
+//             }
             
         }
-        
-        
-        
-        return ;
+        return answer;
     }
-    
 }
