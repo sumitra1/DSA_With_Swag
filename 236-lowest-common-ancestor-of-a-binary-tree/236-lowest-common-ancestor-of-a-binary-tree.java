@@ -13,27 +13,22 @@ class Solution {
         if(root==null){
             return null;
         }
-        
         if(root.val==p.val || root.val==q.val){
             return root;
         }
         
-       TreeNode leftAns= lowestCommonAncestor(root.left,p,q);
+        TreeNode leftAns=lowestCommonAncestor(root.left,p,q);
         TreeNode rightAns=lowestCommonAncestor(root.right,p,q);
         
         if(leftAns!=null && rightAns!=null){
             return root;
         }
-        
-        if(leftAns !=null ){
+        if(leftAns!=null){
             return leftAns;
         }
-        if(rightAns!=null ){
+        if(rightAns!=null){
             return rightAns;
         }
-        
-            return null;
-        
-        
+        return null;
     }
 }
