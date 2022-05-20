@@ -71,24 +71,51 @@ class Solution {
     //       }
     //   }
     
-    
-    for (var i = 0; i < n - 1; i++)
-    {
-        // Find all pairs with sum equals to
-        // "-arr[i]"
-        var s = new Set();
-        for (var j = i + 1; j < n; j++)
-        {
-            var x = -(arr[i] + arr[j]);
-            if (s.has(x))
-            {
-                return 1;
-            }
-            else
-                s.add(arr[j]);
-        }
-    }
+    //method 2
+    // for (var i = 0; i < n - 1; i++)
+    // {
+    //     // Find all pairs with sum equals to
+    //     // "-arr[i]"
+    //     var s = new Set();
+    //     for (var j = i + 1; j < n; j++)
+    //     {
+    //         var x = -(arr[i] + arr[j]);
+    //         if (s.has(x))
+    //         {
+    //             return 1;
+    //         }
+    //         else
+    //             s.add(arr[j]);
+    //     }
+    // }
  
+    // return 0;
+    
+    //method-3
+    
+    arr.sort((a,b)=>a-b);
+    
+    for(let i=0;i<n;i++){
+        
+        let x=arr[i];
+        let l=i+1;
+        let r=n-1;
+        
+        while(l<r){
+            
+            if(x+arr[l]+arr[r]==0){
+                return 1;
+            }else if(x+arr[l]+arr[r]<0){
+                l++;
+            }else{
+                r--;
+            }
+        }
+        
+    }    
+        
+    
     return 0;
+    
     }
 }
