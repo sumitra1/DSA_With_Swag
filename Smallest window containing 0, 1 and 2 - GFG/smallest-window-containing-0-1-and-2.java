@@ -49,7 +49,7 @@ class Solution {
             }
  
             // Calculating length
-            if (zero && one && two)
+             if (zero && one && two)
                 res = Math.min( res,
                     Math.max(zeroindex,Math.max(oneindex, twoindex))
                   - Math.min( zeroindex,Math.min(oneindex, twoindex)));
