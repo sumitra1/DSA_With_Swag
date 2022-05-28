@@ -56,13 +56,14 @@ class Solution {
             
         //     return result;
             
-             int n = s.length();
+        int n = s.length();
 
         int maxLen = -1; // Stores the length of the longest substring with k unique characters found so far.
         Map<Character, Integer> windowCharCount = new HashMap<>(); // Stores the character count for each character in the current window
         int windowStart = 0;
+        int windowEnd=0;
 
-        for(int windowEnd = 0; windowEnd < n; windowEnd++) {
+        while(windowEnd<n) {
             // Add the next character to the sliding window
             char c = s.charAt(windowEnd);
             windowCharCount.put(c, windowCharCount.getOrDefault(c, 0) + 1);
@@ -83,7 +84,9 @@ class Solution {
             if(windowCharCount.size() == k) {
                 // Update maximum length found so far
                 maxLen = Math.max(maxLen, windowEnd-windowStart+1);
+                
             }
+            windowEnd++;
         }
 
         return maxLen;
