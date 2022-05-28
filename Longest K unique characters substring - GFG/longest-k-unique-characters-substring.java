@@ -27,34 +27,34 @@ class Solution {
         // if (s.length()==0 || k==0){ //edge case
         // return -1;
         // }
-        //we will take  two pointers
+        // //we will take  two pointers
         
-            // int slow=0;
-            // int fast=0;
+        //     int slow=0;
+        //     int fast=0;
             
-            // int result=-1;
-            // // hashmap to store unique characters 
-            // HashMap<Character,Integer> hm=new HashMap<>();
+        //     int result=-1;
+        //     // hashmap to store unique characters 
+        //     HashMap<Character,Integer> hm=new HashMap<>();
             
-            // while(fast<s.length()){
-            //     char c=s.charAt(fast);
-            //     hm.put(c, hm.getOrDefault(c,0)+1);//putting characters in hashmap with count of occuring
-            //     while(hm.size()>k){ // will check whether size of hashmap went greater than k
-            //         char d=s.charAt(slow);
-            //         if(hm.get(d)==1){
-            //             hm.remove(d);// removing the char which leads to make the size of hashmap greater
-            //         }
-            //         else{/// if it is already present, do the -1 in character and 
-            //             hm.put(d,hm.get(d)-1);
-            //         }
-            //         slow++;
-            //     }
-            //     result=Math.max(result,fast-slow+1);
-            //     fast++;
-            // }
+        //     while(fast<s.length()){
+        //         char c=s.charAt(fast);
+        //         hm.put(c, hm.getOrDefault(c,0)+1);//putting characters in hashmap with count of occuring
+        //         while(hm.size()>k){ // will check whether size of hashmap went greater than k
+        //             char d=s.charAt(slow);
+        //             if(hm.get(d)==1){
+        //                 hm.remove(d);// removing the char which leads to make the size of hashmap greater
+        //             }
+        //             else{/// if it is already present, do the -1 in character and 
+        //                 hm.put(d,hm.get(d)-1);
+        //             }
+        //             slow++;
+        //         }
+        //         result=Math.max(result,fast-slow+1);
+        //         fast++;
+        //     }
             
             
-            // return result;
+        //     return result;
             
              int n = s.length();
 
